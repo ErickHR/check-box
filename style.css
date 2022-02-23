@@ -1,0 +1,55 @@
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+.container {
+    background-color: rgb(93, 90, 85);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input__check-box {
+    position: relative;
+}
+
+.input__label {
+    position: absolute;
+    background-color: aquamarine;
+    width: 40px;
+    height: 20px;
+    border-radius: 20px;
+    transition: all 2s;
+}
+
+.input__label::before {
+    position: absolute;
+    content: '';
+    background-color: bisque;
+    width: 15px;
+    height: 15px;
+    top: 2.5px;
+    left: 2.5px;
+    border-radius: 100%;
+    transition: all .5s;
+}
+
+.input__checkbox {
+    opacity: 0;
+}
+
+.input__checkbox:checked + .input__label {
+    background-color: rgb(117, 104, 89);
+}
+
+.input__checkbox:checked + .input__label::before {
+    transform: translateX(20px);
+}
